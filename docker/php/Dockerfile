@@ -7,7 +7,7 @@ RUN pecl install apcu xdebug
 
 RUN apt-get update && \
 apt-get install -y \
-zlib1g-dev
+zlib1g-dev unzip
 
 RUN docker-php-ext-install zip
 RUN docker-php-ext-enable apcu
@@ -21,6 +21,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 WORKDIR /usr/src/app
 
 COPY apps/symfony /usr/src/app
-RUN chown -R 1000:1000 /usr/src/app 
+#RUN chown -R 1000:1000 /usr/src/app 
+
+COPY docker/php/.env.local /usr/src/app/.env.local
 
 RUN PATH=$PATH:/usr/src/apps/vendor/bin:bin
