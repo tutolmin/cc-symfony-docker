@@ -67,6 +67,11 @@ Patch vendor bundles to work with SQUID properly
 docker-compose exec php patch -p0 -i squid.patch
 ```
 
+Apply DB migrations
+```
+docker-compose exec php bin/console doctrine:migrations:migrate
+```
+
 Verify access to adminer using the following URL: http://chesscheat.local:8080/?server=maria&username=root&db=chesscheat (password:root)
 
 Verify access to local copy of Symfony using the following URL: http://chesscheat.local/
