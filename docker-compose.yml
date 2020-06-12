@@ -34,6 +34,8 @@ services:
       context: .
       dockerfile: docker/php/Dockerfile
     restart: on-failure
+    environment:
+      COMPOSER_HOME: ${COMPOSER_HOME}
     volumes:
       - './apps/symfony:/usr/src/app'
     env_file:
