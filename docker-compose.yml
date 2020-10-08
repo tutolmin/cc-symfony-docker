@@ -38,6 +38,7 @@ services:
       COMPOSER_HOME: ${COMPOSER_HOME}
     volumes:
       - './apps/symfony:/usr/src/app'
+      - './docker/php/docker-php-ext-nocache.ini:/usr/local/etc/php/conf.d/docker-php-ext-nocache.ini:ro'
     env_file:
       - .env
     user: ${LOCAL_USER}
