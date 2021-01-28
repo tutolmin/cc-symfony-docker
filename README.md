@@ -57,6 +57,13 @@ fb79702d39ad        ccsymfonydocker_php    "docker-php-entrypoi…"   12 seconds
 42d5ed7a1ffc        mariadb:5.5.64         "docker-entrypoint.s…"   12 seconds ago      Up 11 seconds       3306/tcp                                                   ccsymfonydocker_maria_1
 ```
 
+Create valid .env.local under *apps/symfony/.env.local*
+```
+DATABASE_URL="mysql://usr:pass@maria:3306/chesscheat"
+APP_HOST="https://chesscheat.local"
+NEO4J_DEFAULT_CONNECTION_DSN="bolt://usr:pass@chesscheat.local:7687"
+```
+
 Install symfony components with composer
 ```
 docker-compose exec php composer install 
