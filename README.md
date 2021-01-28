@@ -61,7 +61,7 @@ Create valid .env.local under *apps/symfony/.env.local*
 ```
 DATABASE_URL="mysql://usr:pass@maria:3306/chesscheat"
 APP_HOST="https://chesscheat.local"
-NEO4J_DEFAULT_CONNECTION_DSN="bolt://usr:pass@chesscheat.local:7687"
+NEO4J_DEFAULT_CONNECTION_DSN="bolt://usr:pass@172.17.0.1:7687"
 ```
 
 Install symfony components with composer
